@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Foresight · AI Decision Intelligence Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/platform.css?v=3">
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr-in">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <button class="brand" data-go="home" aria-label="Foresight home"><span class="brand-mark">◆</span><span><b id="brandName">Foresight</b><small>AI Decision Intelligence Platform</small></span></button>
+    <nav class="menu" id="menu" aria-label="Modules">
+      <button class="mi nav" data-page="home">Home</button>
+      <div class="dd"><button class="mi" data-group="insights">Insights <span class="car">▾</span></button>
+        <div class="dd-panel">
+          <button class="nav" data-page="command"><span class="num">01</span><span><b>Business Performance</b><small>How is my business performing today?</small></span></button>
+          <button class="nav" data-page="risk"><span class="num">02</span><span><b>Predictive Risk Engine</b><small>What problems are likely to happen next?</small></span><span class="badge" id="riskBadge"></span></button>
+          <button class="nav" data-page="explain"><span class="num">03</span><span><b>Explainable AI Engine</b><small>Why is this happening? Show the maths.</small></span></button>
+        </div></div>
+      <div class="dd"><button class="mi" data-group="decide">Decide <span class="car">▾</span></button>
+        <div class="dd-panel">
+          <button class="nav" data-page="recommend"><span class="num">04</span><span><b>AI Recommendation Engine</b><small>Which action should we take?</small></span></button>
+          <button class="nav" data-page="simulate"><span class="num">05</span><span><b>What-If Simulation Engine</b><small>What happens if I…?</small></span></button>
+          <button class="nav" data-page="assistant"><span class="num">06</span><span><b>AI Enterprise Assistant</b><small>Ask the business, with citations</small></span></button>
+          <button class="nav" data-page="decision"><span class="num">▶</span><span><b>Executive Decision Journey</b><small>Alert → approve → monitor, end to end</small></span></button>
+        </div></div>
+      <div class="dd"><button class="mi" data-group="operate">Operate <span class="car">▾</span></button>
+        <div class="dd-panel">
+          <button class="nav" data-page="process"><span class="num">07</span><span><b>Process Optimisation</b><small>Where is time lost in the workflow?</small></span></button>
+          <button class="nav" data-page="twin"><span class="num">08</span><span><b>Digital Twin</b><small>Live operational view</small></span></button>
+        </div></div>
+      <div class="dd"><button class="mi" data-group="trust">Trust &amp; Platform <span class="car">▾</span></button>
+        <div class="dd-panel">
+          <button class="nav" data-page="governance"><span class="num">09</span><span><b>Governance &amp; Responsible AI</b><small>AI recommends. Humans decide.</small></span></button>
+          <button class="nav" data-page="architecture"><span class="num">⧉</span><span><b>Data &amp; AI Architecture</b><small>How it sits on your existing systems</small></span></button>
+          <button class="nav" data-page="config"><span class="num">⚙</span><span><b>Industry Configuration</b><small>One platform, any industry</small></span></button>
+        </div></div>
+    </nav>
+    <span class="sp"></span>
+    <div class="ind-pick">
+      <button class="ind-btn" id="indBtn" aria-haspopup="listbox"><span class="ico" id="indIco"></span><span class="ind-txt"><small>Industry</small><span id="indName"></span></span><span class="car">▾</span></button>
+      <div class="ind-menu" id="indMenu" role="listbox"></div>
+    </div>
+    <select class="sel" id="roleSel" aria-label="Viewing as role"></select>
+    <button class="btn pri sm" id="storyBtn" title="Simulate the executive alert">▶<span class="lbl"> Live demo</span></button>
+    <a class="icon-btn" id="mobileLink" href="mobile/index.html" target="_blank" rel="noopener" title="Open mobile app" aria-label="Open mobile app">📱</a>
+    <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">◐</button>
+    <button class="icon-btn" id="resetBtn" title="Reset demo" aria-label="Reset demo">⟲</button>
+  </div>
+  <div class="sub-hdr"><span id="crumbInd"></span><span class="sep">/</span><b id="crumbPage"></b><span class="sp"></span><span class="demo-tag">Illustrative demo · mock data · configured by industry-config.js</span></div>
+</header>
+
+<main class="page" id="app"><div class="empty">Loading platform configuration…</div></main>
+
+<div class="push" id="push" role="alert"></div>
+<div class="modal-bg" id="modalBg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+
+<!-- Static app: config is plain JS data loaded by script tag (no server, no build) -->
+<script src="config/industry-config.js?v=3"></script>
+<script src="shared/engine.js?v=3"></script>
+<script src="shared/charts.js?v=3"></script>
+<script src="shared/assistant.js?v=3"></script>
+<script src="js/app.js?v=3"></script>
+</body>
+</html>
